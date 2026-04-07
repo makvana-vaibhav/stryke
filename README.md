@@ -64,10 +64,42 @@ Allow developers to deploy apps without manual DevOps intervention for routine f
 - `packages/contracts`: shared request/status types
 - `packages/config`: shared config loader helpers
 
+## Current mode
+
+- Redis/queue is intentionally disabled for now.
+- API runs with in-memory storage for basic testing.
+
+## Run basic API server
+
+1. Go to `apps/api`
+2. Run `npm run dev`
+3. Test endpoints:
+	- `GET /health`
+	- `GET /servers`
+	- `GET /deployments`
+	- `POST /deployments`
+
+## Run dashboard UI
+
+1. Start API first (`apps/api`, `npm run dev`)
+2. In another terminal go to `apps/dashboard`
+3. Run `npm run dev`
+4. Open `http://localhost:3000`
+
+Deployment form currently captures:
+
+- repository URL
+- branch (default main)
+- server (pre-configured dropdown)
+- app name
+- domain/subdomain
+- internal port
+- environment variables (key=value lines)
+
 ## Step-by-step plan
 
 1. Bootstrap API (`Fastify`/`Nest`) + health/deploy endpoints.
-2. Add queue (`BullMQ` + Redis) between API and worker.
+2. Add queue (`BullMQ` + Redis) between API and worker (later).
 3. Build worker pipeline skeleton (mock deployment steps first).
 4. Add Cloudflare DNS integration.
 5. Add SSH executor + server setup tasks.

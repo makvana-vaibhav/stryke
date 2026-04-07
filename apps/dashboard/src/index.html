@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stryke - Deployment Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>Stryke Deployment Form</h1>
+        <p class="subtitle">Submit deployment input directly from UI.</p>
+
+        <form id="deploymentForm" class="form">
+          <label>
+            Repository (Git URL)
+            <input name="repositoryUrl" type="url" required placeholder="https://github.com/user/project.git" />
+          </label>
+
+          <label>
+            Branch
+            <input name="branch" type="text" value="main" required />
+          </label>
+
+          <label>
+            Server
+            <select name="serverId" id="serverId" required></select>
+          </label>
+
+          <label>
+            App Name / Folder Name
+            <input name="appName" type="text" required placeholder="project-api" />
+          </label>
+
+          <label>
+            Domain / Subdomain
+            <input name="domain" type="text" required placeholder="api.example.com" />
+          </label>
+
+          <label>
+            Port
+            <input name="port" type="number" min="1" max="65535" value="3000" required />
+          </label>
+
+          <label>
+            Environment Variables (one per line)
+            <textarea
+              name="envVars"
+              rows="8"
+              placeholder="PORT=3000&#10;DB_URL=postgres://...&#10;API_KEY=xxxx"
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit">Create Deployment</button>
+        </form>
+
+        <div id="message" class="message"></div>
+      </section>
+
+      <section class="card">
+        <h2>Recent Deployments</h2>
+        <button id="refreshBtn" class="secondary" type="button">Refresh</button>
+        <pre id="deploymentsOutput">Loading...</pre>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
 - `dashboard`: UI for self-service deployments
 - `api`: request validation + orchestration + integrations
 - `worker`: queue consumer that executes deployment steps
-- `redis`: queue broker/backing store
+- `redis` (later): queue broker/backing store
 
 ## Primary workflow
 
