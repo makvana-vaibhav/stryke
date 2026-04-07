@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@stryke/contracts/*": ["packages/contracts/src/*"],
+      "@stryke/config/*": ["packages/config/src/*"]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stryke",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-Service Deployment Automation Platform",
+  "packageManager": "pnpm@9.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "echo \"Add turbo/nx later\"",
+    "build": "echo \"Build pipelines will be added in next step\"",
+    "lint": "echo \"Lint config pending\"",
+    "test": "echo \"Tests pending\""
+  }
+}
